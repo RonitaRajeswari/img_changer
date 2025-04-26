@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image changer</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      .img_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .img_container img{
+        height:300px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+      }
+      .img_container h2{
+        background-color: burlywood;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>image Changer</h1>
+    <div class="img_container">
+      <img
+        src="https://media.istockphoto.com/id/904453184/photo/composite-image-of-mt-fuji-and-tokyo-skyline.jpg?s=2048x2048&w=is&k=20&c=WX4wDucpTekX__e_ryRG3kO4BSoVG2XaJurWT7dJnRs="
+        alt=""
+      />
+      <h2>Japan</h2>
+    </div>
+    <script>
+        let img = document.querySelector('img');
+        let h2 = document.querySelector('h2');
+        let prevSrc = img.src
+        let prevText = h2.innerText
+
+        img.addEventListener('mouseover', () => {
+            img.src = 'https://cdn.pixabay.com/photo/2021/10/10/20/33/mehtab-bagh-6698669_960_720.jpg'
+            h2.innerText = 'India'
+        })
+        img.addEventListener('mouseout', () => {
+            img.src = prevSrc
+            h2.innerText = prevText
+        })
+    </script>
+  </body>
+</html>
